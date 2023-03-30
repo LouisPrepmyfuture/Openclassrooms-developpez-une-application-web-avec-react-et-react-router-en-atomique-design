@@ -1,0 +1,16 @@
+:root {
+  /*
+  * Colors
+  */
+  --primary: #FF6060;
+	--secondary : #F7F7F7;
+	--white : #E5E5E5;
+
+  /*
+  * Fonts
+  */
+  --base-font-family: sans-serif;
+  --headers-font-family: serif;
+  --base-font-lineheight: 1.5em;
+}
+
