@@ -1,34 +1,18 @@
-import * as React from 'react'
-import classnames from 'classnames'
-
-import styles from './styles.css'
-
-export const ButtonType = {
-  BUTTON: 'button',
-  RESET: 'reset',
-  SUBMIT: 'submit',
-}
-
+import React from 'react'
+import PropTypes from 'prop-types'
 
 const Button = (props) => {
-  const {type, onClick, children, size, className } = props
-  const classProps = classnames(
-    styles.button,
-    styles[size],
-    className
-  )
+  const {children, ...other } = props
 
   return (
-    <button type={type} onClick={onClick} className={classProps}>
+    <button {...other}>
       {children}
     </button>
   )
 }
 
-Button.defaultProps = {
-	className:'Button',
-	type: ButtonType.BUTTON,
-	children:"Titre de la location"
+Button.propTypes = {
+  children: PropTypes.any.isRequired,
 }
 
 export default Button

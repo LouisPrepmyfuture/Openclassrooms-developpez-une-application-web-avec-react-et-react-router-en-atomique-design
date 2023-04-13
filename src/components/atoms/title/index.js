@@ -1,15 +1,28 @@
-import * as React from 'react'
-import classnames from 'classnames'
+import React from 'react'
+import PropTypes from 'prop-types'
+import styled, { css } from 'styled-components'
 
-import styles from './style.css'
+const fontSize = ({ lvl }) => `${0.75 + (1 * (1 / lvl))}rem`
 
 
-function Title(props){
-  <h1 className={classnames(styles.title, props.className)}>{props.children}</h1>
+const styles = css`
+  font-weight: 500;
+  font-size: ${fontSize};
+`
+
+const Title = styled(({
+  lvl, children, ...props
+}) => React.createElement(`h${lvl}`,props,children))`${styles}`
+
+
+Title.propTypes = {
+  level: PropTypes.number,
+  children: PropTypes.node
 }
+
 Title.defaultProps = {
-  className: '',
-  children: '',
+  children: 'Need Title',
+	lvl:2,
 }
 
 export default Title

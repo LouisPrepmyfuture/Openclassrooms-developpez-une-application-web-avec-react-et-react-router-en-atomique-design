@@ -1,30 +1,22 @@
 
 import Header from "../organisms/header"
-import Tag from "../atoms/tag"
-import Card from "../atoms/card"
-import Label from "../atoms/label"
-import Button from "../atoms/button"
-import Accordion from "../molecules/accordion"
+import Banner from "../molecules/banner"
+import CardLocation from "../organisms/cardLocation"
+import ImgBanner from "../../assets/img/banner/banner-home.png"
+import data from "../../data/data.json"
+import '../_settings/_base.css'
 function Home() {
+
   return (
-	<>
-  	 <Header />
-		 <p>page home</p>
-		 <Tag />
-		 	<Card >
-		 		<Label />
-			</Card>
-			<Button />
-			<Accordion>
-				Climatisation<br/>
-				Wi-Fi<br/>
-				Cuisine<br/>
-				Espace de travail<br/>
-				Fer à repasser<br/>
-				Sèche-cheveux<br/>
-				Cintres<br/>
-			</Accordion>
-	</>
+		<>
+			<Header />
+			<section>
+				<Banner background={ImgBanner} lvl={1} title={"Chez vous, partout et ailleurs"} />
+			</section>
+			<section>
+				<CardLocation data={data} />
+			</section>
+		</>
   )
 }
 

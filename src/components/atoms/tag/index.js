@@ -1,25 +1,18 @@
 import * as React from 'react'
-import classnames from 'classnames'
-
-import styles from './styles.css'
+import PropTypes from 'prop-types'
 
 const Tag = (props) => {
-	const {children, className } = props
-	const classProps = classnames(
-		styles.tag,
-		className
-	)
+	const {children, key, ...other} = props
 
 	return (
-		<div className={classProps} >
+		<div key={key} {...other}>
 			<span>{children}</span>
 		</div>
 	)
 }
 
-Tag.defaultProps = {
-	className:'tag',
-	children:"test"
+Tag.propTypes = {
+  children: PropTypes.any.isRequired,
 }
 
 export default Tag

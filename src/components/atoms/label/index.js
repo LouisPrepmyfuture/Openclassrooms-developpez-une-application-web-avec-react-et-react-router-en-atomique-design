@@ -1,25 +1,17 @@
 import * as React from 'react'
-import classnames from 'classnames'
-
-import styles from './styles.css'
+import PropTypes from 'prop-types'
 
 const Label = (props) => {
-	const {children, className } = props
-	const classProps = classnames(
-		styles.Label,
-		className
-	)
-
+	const {children, ...other} = props
 	return (
-		<label className={classProps} >
+		<label {...other} >
 			{children}
 		</label>
 	)
 }
 
-Label.defaultProps = {
-	className:'label',
-	children: "Title de location"
+Label.propTypes = {
+  children: PropTypes.any.isRequired,
 }
 
 export default Label
