@@ -6,7 +6,7 @@ import datas from "../../data/data.json"
 
 function Logement() {
 	const { id } = useParams();
-	const [ location ] = datas.filter(data => data.id === id);
+	const [ location ] = datas.filter(data => data.id === id)
 	
   return (
 		<>

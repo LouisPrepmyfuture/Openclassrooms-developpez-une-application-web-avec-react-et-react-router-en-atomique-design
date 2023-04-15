@@ -13,8 +13,10 @@ const BlockLocation = styled.div`
 	justify-content: space-between;
 	align-items: center;
 	margin: 0 auto;
-	padding: 0 50px;
-	padding-bottom: 56px;
+	padding: 20px;
+`
+const CardStyle = styled(Card)`
+	margin: 20px;
 `
 
 
@@ -24,7 +26,7 @@ const CardLocation = ({data}) => {
 		<BlockLocation>
 			 {
           data.map(({id, title, cover}) => (
-            < Card
+            <CardStyle
 							key={id}
               id={id}
 							to={id}

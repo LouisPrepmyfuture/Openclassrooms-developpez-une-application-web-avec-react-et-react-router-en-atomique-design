@@ -1,5 +1,7 @@
 @import './_variables.css';
-
+*{	
+	box-sizing: border-box;
+	}
 html,
 body {
   color: var(--primary);
@@ -9,12 +11,36 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
+	font-size: 16px;
   overflow-x: hidden;
 }
 
+#root{
+	height: 100%;
+}
 .show {
   display: block;
 }
 .hide {
   display: none;
+}
+
+.container{
+	max-width:1240px;
+	margin: 0 auto;
+}
+a{
+	text-decoration: none;
+	color: var(--primary);
+}
+#sidebar a.active {
+  text-decoration:underline;
+}
+section{
+	margin-bottom:43px;
+}
+.flexCenterCenter{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }
