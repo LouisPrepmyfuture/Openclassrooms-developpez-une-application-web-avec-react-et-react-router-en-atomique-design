@@ -5,10 +5,14 @@ import styled from 'styled-components'
 const BannerStyle = styled.div`
   ${({ background }) =>
     background !== undefined &&
-    `background-image: url(${background});
+    `background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5)), url(${background});
 		background-position: center;
 		background-repeat: no-repeat;
 		background-size: cover;`}
+		${({ title }) =>
+		title !== undefined &&`
+		`}
+		
 		max-height: 223px;
 		max-width: 1240px;
 		height:223px;
@@ -24,13 +28,9 @@ const BannerStyle = styled.div`
 function Banner({title,background, lvl,className}) {
   return (
     <BannerStyle className={className} background={background}>
-			 <Title lvl={lvl}  children={title}/>
+			{title ? <Title lvl={lvl}  children={title}/> : null}
     </BannerStyle>
   );
 }
-Banner.defaultProps = {
-  className: '',
-  children: '',
-	title:undefined
-}
+
 export default Banner;

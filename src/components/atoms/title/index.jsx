@@ -2,12 +2,20 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled, { css } from 'styled-components'
 
-const fontSize = ({ lvl }) => `${0.75 + (1 * (1 / lvl))}rem`
 
-
+const handleSize = lvl => {
+  switch (lvl) {
+    case "1":
+      return `font-size: 48px;`
+    default:
+      return `font-size: 36px;`
+  }
+};
 const styles = css`
   font-weight: 500;
-  font-size: ${fontSize};
+	margin:0;
+	padding:0;
+  ${({ lvl }) => handleSize(lvl)};
 `
 
 const Title = styled(({

@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import Block from '../../atoms/block'
 import { Link } from 'react-router-dom'
-
+import PropTypes from 'prop-types'
 
 const Cardstyle = styled(Block)
 `
@@ -25,8 +25,6 @@ const LinkCard = styled(Link)
 		background: linear-gradient(to bottom, transparent, #00000080);
 	}
 `
-
-
 const Card = ({backgroundImg, children, id, className }) => {
 	return <Cardstyle key={id} id={id} className={className} backgroundImg={backgroundImg}>
 					<LinkCard to={`/location/${id}`} >
@@ -35,11 +33,7 @@ const Card = ({backgroundImg, children, id, className }) => {
 				</Cardstyle>
 }
 
-Card.defaultProps = {
-  className: 'card',
-  children: 'Titre de la location',
-  backgroundImg: undefined,
-	to:undefined
+Card.propTypes = {
+  id: PropTypes.any.isRequired,
 }
-
 export default Card

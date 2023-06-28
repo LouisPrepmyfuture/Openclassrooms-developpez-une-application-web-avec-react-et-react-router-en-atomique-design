@@ -1,40 +1,69 @@
-import React,{ useState } from 'react'
+import React, { useState } from 'react'
 import List from '../../atoms/list'
 import Button from '../../atoms/button'
+import styled from 'styled-components'
+import PropTypes from 'prop-types'
 
-export const accordion = {
-	DEFAULT: 'default',
-	LONG: 'long',
-}
+const handleSize = size => {
+	switch (size) {
+		case "small":
+			return `
+				max-width:582px;
+				width:100%;
+			`
+		default:
+			return "max-width:1023px;"
+	}
+};
 
-const Accordion = ({ title, children, className }) => {
+const Dropdown = styled(Button)` 
+	width:100%;
+	padding:13px 20px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+`
+const AccordionStyle = styled.div`
+ ${({ size }) => handleSize(size)};
+`
 
+const AccordionContentStyle = styled.div`
+ ${({ size }) => handleSize(size)};
+ padding: 20px;
+ min-height: 200px;
+ background: var(--secondary);
+`
 
-	// handleClick
-	const [isActive, setActive] = useState(false);
-	const handleClick = () => setActive(!isActive) 
+const Accordion = ({title, children, open, size, className}) => {
 
-	const result = Array.isArray(children) ? <List children={children} /> : children
+	const [isActive, setActive] = useState(open);
+	const handleClick = () => setActive(!isActive)
 
-	
+	// List ?
+	const result = 
+		<AccordionContentStyle> 
+			{	Array.isArray(children) ? <List children={children} /> : children}
+	 </AccordionContentStyle>
 
 	return (
-		<div className={className} >
-			<Button onClick={() => handleClick()} >
+		<AccordionStyle className={className} size={size} >
+			<Dropdown isActive={isActive} onClick={() => handleClick()} >
 				{title}
-				<svg className={`arrow ${isActive ? 'flip' : ''} `} width="28" height="17" viewBox="0 0 28 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<svg className={` ${isActive ? 'flip' : ''} `} width="28" height="17" viewBox="0 0 28 17" fill="none" xmlns="http://www.w3.org/2000/svg">
 					<path d="M24.8401 16.3467L27.2001 13.9733L14.0001 0.786651L0.800071 13.9867L3.16007 16.3467L14.0001 5.50665L24.8401 16.3467Z" fill="white" />
 				</svg>
-			</Button>
-			{isActive? result : null }
-		</div>
+			</Dropdown>
+		
+				{isActive ? result : null}
+		
+		</AccordionStyle>
 	)
 }
-
 Accordion.defaultProps = {
-	className: 'accordion',
-	title: "title btn",
-	children: "test content"
+  open: false,
+}
+Accordion.propTypes = {
+  title: PropTypes.any.isRequired
 }
 
 export default Accordion

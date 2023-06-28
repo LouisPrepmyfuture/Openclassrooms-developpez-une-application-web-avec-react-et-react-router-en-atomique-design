@@ -1,15 +1,10 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom/client';
 import Home from './components/templates/Home'
 import ErrorPage from "./components/templates/error-page";
 import Apropos from "./components/templates/A_propos";
 import Logement from "./components/templates/Logement";
-
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
-
+import {createBrowserRouter,RouterProvider,} from "react-router-dom";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -26,10 +21,15 @@ const router = createBrowserRouter([
     element: <Apropos />,
 		errorElement: <ErrorPage />,
   },
+	{
+    path: "/erreur-logement",
+    element: <ErrorPage />,
+		errorElement: <ErrorPage />,
+  }
 ])
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode >
     <RouterProvider router={router} />
   </React.StrictMode>
-);;
+);

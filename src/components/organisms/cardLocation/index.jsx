@@ -4,16 +4,16 @@ import styled from 'styled-components'
 
 
 const BlockLocation = styled.div`
-	background: #F7F7F7;
-	border-radius: 25px;
-	max-width: 1240px;
-	border-radius: 20px;
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-between;
-	align-items: center;
-	margin: 0 auto;
-	padding: 20px;
+  background: rgb(247, 247, 247);
+  max-width: 1240px;
+  border-radius: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 0px auto;
+  padding: 20px;
+  flex-direction: row;
 `
 const CardStyle = styled(Card)`
 	margin: 20px;

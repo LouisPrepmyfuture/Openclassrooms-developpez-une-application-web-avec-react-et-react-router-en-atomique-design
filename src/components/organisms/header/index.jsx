@@ -30,7 +30,7 @@ function Header() {
   return (
     <NavContainer>
       <StyledLink>
-        <Image url={logo} alt="logo" />
+        <Image theme="logo" url={logo} alt="logo" />
       </StyledLink>
       <ContentLink id="sidebar" className="flexCenterCenter">
         <StyledLink to="/" >Accueil</StyledLink>
