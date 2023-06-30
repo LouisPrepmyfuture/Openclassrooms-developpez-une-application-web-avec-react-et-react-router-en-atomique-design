@@ -72,14 +72,14 @@ export default function Carousel({ pictures }) {
 			</BtnStyle>
 		)}
 
-   <FigureStyle style={styleImage} >
+   <FigureStyle style={styleImage}>
     {pictures.map((image, index) => (
      <Image key={index} url={image} alt={'image du logement'} size="full"/>
     ))}
    </FigureStyle>
 
 	 <NbImgStyle>{idImage + 1} / {pictures.length}</NbImgStyle> 
-	 
+
 	 {pictures.length > 1 && (
 		<BtnStyle  id="next" theme="round"  onClick={(event) => 
 			switchImage(idImage, event.target.parentElement)}>
