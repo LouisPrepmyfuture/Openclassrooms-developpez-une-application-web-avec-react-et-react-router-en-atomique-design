@@ -4,8 +4,7 @@ import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
 
 const Cardstyle = styled(Block)
-`
-  max-width:340px;
+` max-width:340px;
   min-width: 320px;
 	width:100%;
   border-radius: 10px;
@@ -13,8 +12,7 @@ const Cardstyle = styled(Block)
 	overflow: hidden;
 `
 const LinkCard = styled(Link)
-`
-	font-weight:500;
+`	font-weight:500;
 	font-size:18px;
 	width:100%;
 	height:100%;
@@ -32,7 +30,6 @@ const Card = ({backgroundImg, children, id, className }) => {
 					</LinkCard>
 				</Cardstyle>
 }
-
 Card.propTypes = {
   id: PropTypes.any.isRequired,
 }

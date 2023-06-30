@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import Home from './components/templates/Home'
-import ErrorPage from "./components/templates/error-page";
-import Apropos from "./components/templates/A_propos";
-import Logement from "./components/templates/Logement";
+import Home from './components/pages/Home'
+import ErrorPage from "./components/pages/error-page";
+import Apropos from "./components/pages/A_propos";
+import Logement from "./components/pages/Logement";
 import {createBrowserRouter,RouterProvider,} from "react-router-dom";
 const router = createBrowserRouter([
   {

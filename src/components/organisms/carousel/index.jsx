@@ -54,7 +54,6 @@ export default function Carousel({ pictures }) {
 
  function switchImage(position, target) {
 	 if (target.getAttribute('id') === 'previous') {
-		console.log('test');
    setIdImage(position - 1)
    position === 0 ? setIdImage(pictures.length - 1) : setIdImage(position - 1)
   } else {
@@ -65,24 +64,28 @@ export default function Carousel({ pictures }) {
 
  return (
   <CarouselStyle>
+
 		{pictures.length > 1 && (
 			<BtnStyle position={"left"} id="previous" theme="round"
-			onClick={(event) => switchImage(idImage, event.target.parentElement)}>
+				onClick={(event) => switchImage(idImage, event.target.parentElement)}>
 				<ArrowLeft/>
 			</BtnStyle>
 		)}
+
    <FigureStyle style={styleImage} >
     {pictures.map((image, index) => (
      <Image key={index} url={image} alt={'image du logement'} size="full"/>
     ))}
    </FigureStyle>
-		<NbImgStyle>{idImage + 1} / {pictures.length}</NbImgStyle> 
+
+	 <NbImgStyle>{idImage + 1} / {pictures.length}</NbImgStyle> 
+	 
 	 {pictures.length > 1 && (
-		<BtnStyle  id="next" theme="round"  onClick={(event) => switchImage(idImage, event.target.parentElement)}>
+		<BtnStyle  id="next" theme="round"  onClick={(event) => 
+			switchImage(idImage, event.target.parentElement)}>
     	<ArrowRight/>
    	</BtnStyle>
 	 )}
-   
   </CarouselStyle>
  )
 }
