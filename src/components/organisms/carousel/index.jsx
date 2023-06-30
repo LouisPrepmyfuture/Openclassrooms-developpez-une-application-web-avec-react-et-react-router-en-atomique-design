@@ -52,8 +52,8 @@ export default function Carousel({ pictures }) {
   transform: `translateX(-${idImage * 100}%)`,
  }
 
- function switchImage(position, target) {
-	 if (target.getAttribute('id') === 'previous') {
+ function switchImage(position, direction) {
+	 if (direction === 'previous') {
    setIdImage(position - 1)
    position === 0 ? setIdImage(pictures.length - 1) : setIdImage(position - 1)
   } else {
@@ -67,7 +67,7 @@ export default function Carousel({ pictures }) {
 
 		{pictures.length > 1 && (
 			<BtnStyle position={"left"} id="previous" theme="round"
-				onClick={(event) => switchImage(idImage, event.target.parentElement)}>
+				onClick={(event) => switchImage(idImage, "previous")}>
 				<ArrowLeft/>
 			</BtnStyle>
 		)}
@@ -82,7 +82,7 @@ export default function Carousel({ pictures }) {
 
 	 {pictures.length > 1 && (
 		<BtnStyle  id="next" theme="round"  onClick={(event) => 
-			switchImage(idImage, event.target.parentElement)}>
+			switchImage(idImage, "next")}>
     	<ArrowRight/>
    	</BtnStyle>
 	 )}

@@ -1,5 +1,5 @@
-import {React, useEffect} from 'react'
-import { useParams, useNavigate} from 'react-router-dom'
+import {React} from 'react'
+import { useParams, Navigate} from 'react-router-dom'
 import Header from "../organisms/header"
 import datas from "../../data/data.json"
 import Title from '../atoms/title'
@@ -52,15 +52,12 @@ const BoxAvatare = styled.div `
 
 
 function Logement() {
-	const navigate = useNavigate();
 	const { id } = useParams();
 	const [ logement ] = datas.filter(data => data.id === id)
 	
-	useEffect(() => {
-		if(logement === undefined) {
-			navigate('/erreur-logement');
-		}
-	}) 
+	if(logement === undefined) {
+		return <Navigate to='/erreur-logement' />
+	} 
 
   return (
 		<>
