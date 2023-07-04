@@ -10,6 +10,10 @@ const TagStyle = styled.div`
     background: var(--primary);
     border-radius: 20px;
     display: initial;
+		margin: 5px;
+		@media (max-width: 683px) {
+			font-size: 10px;
+		}
 `
 
 const Tag = (props) => {

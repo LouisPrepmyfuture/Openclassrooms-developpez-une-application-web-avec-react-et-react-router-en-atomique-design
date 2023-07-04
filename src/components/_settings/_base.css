@@ -13,13 +13,17 @@ body {
   padding: 0;
 	font-size: 16px;
   overflow-x: hidden;
+	height: 100%;
+	min-width: 375px;
+	position: relative;
 }
 
 #root{
 	position: relative;
 	min-height: 100vh;
-	padding: 0 1%;
+	height: 100%;
 }
+
 #error-page{
 	text-align: center;
 	display: flex;
@@ -53,9 +57,6 @@ a{
 section{
 	margin-bottom:43px;
 }
-main{
-	padding-bottom:209px;
-}
 /* helper */
 .flexCenterBetween{
 	display: flex;
@@ -84,4 +85,9 @@ main{
 }
 .col-6{
 	width: 50%;
+}
+@media (max-width: 1283px){
+	.container{
+		padding: 20px 20px 0 20px;
+	}
 }

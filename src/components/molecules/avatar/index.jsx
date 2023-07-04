@@ -12,6 +12,10 @@ const AvatarStyle = styled.div
 	min-width: 165px;
 	align-items: center;
 	text-align: end;
+	@media (max-width: 683px) {
+		justify-content:end;
+		max-width:93px;
+	}
 `
 const ImageStyle = styled(Image)`
   margin-left: 20px;

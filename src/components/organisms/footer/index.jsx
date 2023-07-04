@@ -5,14 +5,15 @@ import Image from '../../atoms/image'
 const FooterStyle = styled.footer`
 	background-color: rgb(0, 0, 0);
 	text-align: center;
+	color: white;
 	padding: 29px 0px;
 	font-size: 24px;
 	font-weight: 500;
-	position: absolute;
-	bottom: 0px;
 	width: 100%;
 	height: 209px;
-	left: 0;
+	@media (max-width: 683px) {
+		font-size: 12px;
+	}
 `
 
 const LogoStyle = styled(Image)`

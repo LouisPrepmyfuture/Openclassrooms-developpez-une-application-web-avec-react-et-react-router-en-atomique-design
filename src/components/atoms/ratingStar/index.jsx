@@ -9,9 +9,11 @@ const ContentStyle = styled.div`
 	padding: 10px 0px;
 	width: 100%;
 	display: flex;
-	justify-content: space-around;
 	svg {
 		font-size: 24px;
+			@media (max-width: 683px) {
+				font-size: 18px;
+			}
 		}
 `
 

@@ -24,6 +24,10 @@ const handleSize = size => {
 			return `
 				width:64px;
 				height:64px;
+				@media (max-width: 683px) {
+					width:32px;
+					height:32px;
+				}
 			`
 		case "full":
 			return `
@@ -40,9 +44,9 @@ const ImageStyle = styled.img`
 `
 
 const Image = (props) => {
-	const { url, alt, size, theme, ...other } = props
+	const { url, alt, size, theme, classCss, ...other } = props
 	return (
-		<ImageStyle size={size} theme={theme} src={url} alt={alt} {...other} />
+		<ImageStyle className={classCss} size={size} theme={theme} src={url} alt={alt} {...other} />
 	)
 }
 

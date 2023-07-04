@@ -54,7 +54,7 @@ const Accordion = ({title, children, open, size, className}) => {
 				</svg>
 			</Dropdown>
 		
-				{isActive ? result : null}
+			{isActive ? result : null}
 		
 		</AccordionStyle>
 	)
