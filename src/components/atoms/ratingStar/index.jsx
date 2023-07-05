@@ -9,10 +9,16 @@ const ContentStyle = styled.div`
 	padding: 10px 0px;
 	width: 100%;
 	display: flex;
+	justify-content: end;
+	@media (max-width: 683px) {
+		justify-content: start;
+	}
 	svg {
-		font-size: 24px;
+		font-size: 36px;
+		padding: 0 5px;
 			@media (max-width: 683px) {
 				font-size: 18px;
+				padding: 0;
 			}
 		}
 `

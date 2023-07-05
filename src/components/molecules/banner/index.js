@@ -17,13 +17,14 @@ const BannerStyle = styled.div`
 		display:flex;
 		justify-content:center;
 		margin: 0 auto;
+		align-items: center;
+
 		h1{
 			font-size:48px;
 			color:white;
 			font-weight: 500;
 		}
 		@media (max-width: 683px) {
-			align-items:center;
 			justify-content:start;
 			height:111px;
 			h1{

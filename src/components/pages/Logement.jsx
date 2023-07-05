@@ -7,7 +7,7 @@ import Avatar from '../molecules/avatar'
 import Label from '../atoms/label'
 import RatingStars from '../atoms/ratingStar'
 import Tag from '../atoms/tag'
-import Accordion from '../molecules/collapse'
+import Collapse from '../molecules/collapse'
 import Footer from '../organisms/footer'
 import styled from 'styled-components'
 import Carousel from '../organisms/gallery'
@@ -20,7 +20,7 @@ const ContentTag = styled.div`
   display: flex;
   flex-wrap: wrap;
 `
-const AccordionLog = styled(Accordion)``
+const CollapseLog = styled(Collapse)``
 
 const Wrapper = styled.div`
  display: grid;
@@ -85,7 +85,7 @@ function Logement() {
       <RatingStars rating={parseInt(logement.rating)} />
      </BoxAvatare>
      <div className="center">
-      <AccordionLog
+      <CollapseLog
        size="small"
        title="Description"
        children={logement.description}
@@ -93,7 +93,7 @@ function Logement() {
       />
      </div>
      <div className="center">
-      <AccordionLog
+      <CollapseLog
        size="small"
        title="Équipement"
        children={logement.equipments}
