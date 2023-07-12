@@ -14,9 +14,16 @@ const BlockLocation = styled.div`
   margin: 0px auto;
   padding: 20px;
   flex-direction: row;
+	@media (max-width: 683px) {
+		background: none;
+		padding: 0;
+	}
 `
 const CardStyle = styled(Card)`
 	margin: 20px;
+	@media (max-width: 683px) {
+		margin:20px 0;
+	}
 `
 
 
