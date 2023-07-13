@@ -7,6 +7,7 @@ import { TbChevronLeft, TbChevronRight } from 'react-icons/tb'
 const FigureStyle = styled.figure`
  height: 100%;
  display: flex;
+ width: 100%;
  border-radius: 10px;
  margin: 0 auto;
 `
@@ -18,7 +19,7 @@ const CarouselStyle = styled.div`
  position: relative;
  overflow: hidden;
  @media (max-width: 683px) {
-  width: 335px;
+  min-width: 335px;
   height: 255px;
  }
 `

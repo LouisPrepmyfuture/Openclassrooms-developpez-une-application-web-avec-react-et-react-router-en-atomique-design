@@ -23,6 +23,7 @@ const CardStyle = styled(Card)`
 	margin: 20px;
 	@media (max-width: 683px) {
 		margin:20px 0;
+		max-width: 100%;
 	}
 `
 
