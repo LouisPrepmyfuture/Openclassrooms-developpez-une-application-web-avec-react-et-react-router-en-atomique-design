@@ -47,7 +47,7 @@ const BoxAvatare = styled.div`
   justify-self: start;
   align-items: center;
 	width: 100%;
-	justify-content: end;
+	justify-content: space-between;
  }
 `
 

@@ -10,6 +10,9 @@ const handleSize = size => {
 			return `
 				max-width:582px;
 				width:100%;
+				@media (max-width: 904px) {
+					max-width:100%;
+				 }
 			`
 		default:
 			return "max-width:1023px;"
